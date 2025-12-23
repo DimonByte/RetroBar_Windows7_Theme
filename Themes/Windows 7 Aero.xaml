@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
-    <system:Double x:Key="TaskbarHeight">48</system:Double>
+    <system:Double x:Key="TaskbarHeight">40</system:Double>
     <system:Double x:Key="TaskbarRowHeight">30</system:Double>
     <system:Double x:Key="TaskbarWidth">80</system:Double>
     <system:Boolean x:Key="AllowsTransparency">True</system:Boolean>
@@ -17,19 +17,18 @@
                 TileMode="None"
                 AlignmentX="Center"
                 AlignmentY="Center" />
+    <ImageBrush x:Key="TaskbarVerticalBackground"
+                ImageSource="{StaticResource TaskbarImage}"
+                Stretch="Fill"
+                TileMode="None"
+                AlignmentX="Center"
+                AlignmentY="Center">
+        <ImageBrush.RelativeTransform>
+            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+        </ImageBrush.RelativeTransform>
+    </ImageBrush>
+
     
-    <LinearGradientBrush x:Key="TaskbarVerticalBackground"
-                         StartPoint="0,0"
-                         EndPoint="1,0">
-        <GradientStop Color="#c7767676"
-                      Offset="0.0" />
-        <GradientStop Color="#c7323232"
-                      Offset="0.25" />
-        <GradientStop Color="#bc000000"
-                      Offset="0.25" />
-        <GradientStop Color="#c2000000"
-                      Offset="1.0" />
-    </LinearGradientBrush>
     <SolidColorBrush x:Key="TaskbarWindowBackground" Color="Transparent" />
     <SolidColorBrush x:Key="TaskbarTopBorder" Color="Transparent" />
     <SolidColorBrush x:Key="TaskbarTopInnerBorder" Color="#000000ff" />
@@ -509,7 +508,8 @@
            BasedOn="{StaticResource TaskButton}">
         <Setter Property="Margin"
                 Value="{DynamicResource TaskButtonMargin}" />
-        <Setter Property="Height" Value="51" />
+        <!-- NOTE: The height needs to be taskbar height + 2 to fit correctly -->
+        <Setter Property="Height" Value="42" /> 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -534,9 +534,9 @@
                                             BorderBrush="{DynamicResource TaskButtonInnerBottomLeftBorder}"
                                             CornerRadius="2"
                                             x:Name="ButtonInnerBottomLeftBorder">
-                                        <ContentPresenter Margin="6,6"
+                                        <ContentPresenter Margin="6,0"
                                                           x:Name="Content"
-                                                          VerticalAlignment="Center" 
+                                                          VerticalAlignment="Center"
                                                            />
                                     </Border>
                                 </Border>
@@ -926,7 +926,7 @@
                     <Border x:Name="StartButtonBorder"
                             FlowDirection="LeftToRight">
                         <Border.Background>
-                            <ImageBrush ImageSource="{DynamicResource StartButtonImageLarge}"
+                            <ImageBrush ImageSource="{DynamicResource StartButtonImageBottomScaled}"
                                         ViewboxUnits="RelativeToBoundingBox"
                                         Viewbox="0,0,1,0.3333" />
                         </Border.Background>
@@ -938,7 +938,7 @@
                             <Setter TargetName="StartButtonBorder"
                                     Property="Background">
                                 <Setter.Value>
-                                    <ImageBrush ImageSource="{DynamicResource StartButtonImageLarge}"
+                                    <ImageBrush ImageSource="{DynamicResource StartButtonImageBottomScaled}"
                                                 ViewboxUnits="RelativeToBoundingBox"
                                                 Viewbox="0,0.3333,1,0.3333" />
                                 </Setter.Value>
@@ -949,7 +949,7 @@
                             <Setter TargetName="StartButtonBorder"
                                     Property="Background">
                                 <Setter.Value>
-                                    <ImageBrush ImageSource="{DynamicResource StartButtonImageLarge}"
+                                    <ImageBrush ImageSource="{DynamicResource StartButtonImageBottomScaled}"
                                                 ViewboxUnits="RelativeToBoundingBox"
                                                 Viewbox="0,0.6666,1,0.3333" />
                                 </Setter.Value>
@@ -960,7 +960,7 @@
                             <Setter TargetName="StartButtonBorder"
                                     Property="Background">
                                 <Setter.Value>
-                                    <ImageBrush ImageSource="{DynamicResource StartButtonImageLarge}"
+                                    <ImageBrush ImageSource="{DynamicResource StartButtonImageBottomScaled}"
                                                 ViewboxUnits="RelativeToBoundingBox"
                                                 Viewbox="0,0.6666,1,0.3333" />
                                 </Setter.Value>
@@ -1055,7 +1055,7 @@
                                 <Setter TargetName="StartButtonBorder"
                                         Property="Background">
                                     <Setter.Value>
-                                        <ImageBrush ImageSource="{DynamicResource StartButtonImageTopScaled}"
+                                        <ImageBrush ImageSource="{DynamicResource StartButtonImageBottomScaled}"
                                                     ViewboxUnits="RelativeToBoundingBox"
                                                     Viewbox="0,0,1,0.32" />
                                     </Setter.Value>
@@ -1075,7 +1075,7 @@
                                 <Setter TargetName="StartButtonBorder"
                                         Property="Background">
                                     <Setter.Value>
-                                        <ImageBrush ImageSource="{DynamicResource StartButtonImageTopScaled}"
+                                        <ImageBrush ImageSource="{DynamicResource StartButtonImageBottomScaled}"
                                                     ViewboxUnits="RelativeToBoundingBox"
                                                     Viewbox="0,0.3333,1,0.32" />
                                     </Setter.Value>
@@ -1095,7 +1095,7 @@
                                 <Setter TargetName="StartButtonBorder"
                                         Property="Background">
                                     <Setter.Value>
-                                        <ImageBrush ImageSource="{DynamicResource StartButtonImageTopScaled}"
+                                        <ImageBrush ImageSource="{DynamicResource StartButtonImageBottomScaled}"
                                                     ViewboxUnits="RelativeToBoundingBox"
                                                     Viewbox="0,0.6666,1,0.32" />
                                     </Setter.Value>
@@ -1115,7 +1115,7 @@
                                 <Setter TargetName="StartButtonBorder"
                                         Property="Background">
                                     <Setter.Value>
-                                        <ImageBrush ImageSource="{DynamicResource StartButtonImageTopScaled}"
+                                        <ImageBrush ImageSource="{DynamicResource StartButtonImageBottomScaled}"
                                                     ViewboxUnits="RelativeToBoundingBox"
                                                     Viewbox="0,0.6666,1,0.32" />
                                     </Setter.Value>
@@ -1143,7 +1143,9 @@
            x:Key="TaskIcon"
            BasedOn="{StaticResource TaskIcon}">
         <Setter Property="Margin"
-                Value="0,0,4,0" />
+                Value="0,0,3,0" />
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
     </Style>
 
     <Style TargetType="Image"
@@ -1151,6 +1153,8 @@
            BasedOn="{StaticResource TaskOverlayIcon}">
         <Setter Property="Margin"
                 Value="0,0,3,-1" />
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
     </Style>
 
     <Style TargetType="TextBlock"
@@ -1255,7 +1259,7 @@
            x:Key="NotifyIcon"
            BasedOn="{StaticResource NotifyIcon}">
         <Setter Property="Margin"
-                Value="0,1,4,1" />
+                Value="0,1,8,0" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=Orientation, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
                          Value="Vertical">
@@ -1341,7 +1345,7 @@
                                             BorderBrush="Transparent"
                                             CornerRadius="2"
                                             x:Name="ButtonInnerBottomBorder">
-                                        <ContentPresenter Margin="1,3,1,3"
+                                        <ContentPresenter Margin="10,10,10,10"
                                                           x:Name="Content" />
                                     </Border>
                                 </Border>
@@ -1355,9 +1359,10 @@
                                 <Setter TargetName="ButtonBorder"
                                         Property="Padding"
                                         Value="0" />
+                                        <!-- IN THE FUTURE, if you want to make the quick launch smaller or larger, use this variable and paste the value to the rest of the triggers -->
                                 <Setter TargetName="Content"
                                         Property="Margin"
-                                        Value="2,1,3,0" />
+                                        Value="10,10,10,10" /> 
                             </DataTrigger.Setters>
                         </DataTrigger>
                         <Trigger Property="IsMouseOver"
@@ -1405,7 +1410,7 @@
                                     Value="Transparent" />
                             <Setter TargetName="Content"
                                     Property="Margin"
-                                    Value="2,3,0,3" />
+                                    Value="10,10,10,10" />
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
@@ -1417,7 +1422,7 @@
                             <MultiDataTrigger.Setters>
                                 <Setter TargetName="Content"
                                         Property="Margin"
-                                        Value="3,1,2,0" />
+                                        Value="10,10,10,10" />
                             </MultiDataTrigger.Setters>
                         </MultiDataTrigger>
                     </ControlTemplate.Triggers>
