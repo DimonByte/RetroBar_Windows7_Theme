@@ -2,6 +2,8 @@
 
 ### An attempt at a Windows 7 taskbar for RetroBar
 
+![alt text](image-2.png)
+
 ![alt text](image-1.png)
 ![alt text](image.png)
 
