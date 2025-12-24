@@ -10,7 +10,7 @@
     <Thickness x:Key="TaskButtonMargin" Right="2" />
     <FontWeight x:Key="SetTimeMenuItemWeight">Normal</FontWeight>
     <BitmapImage x:Key="TaskbarImage" UriSource="../Resources/win7taskbar.png" />
-
+    <BitmapImage x:Key="ShowDesktopImage" UriSource="../Resources/win7showdesktop.png" />
     <ImageBrush x:Key="TaskbarBackground"
                 ImageSource="{StaticResource TaskbarImage}"
                 Stretch="Fill"
@@ -277,8 +277,21 @@
     <SolidColorBrush x:Key="ClockForeground" Color="#ffffff" />
     <SolidColorBrush x:Key="InputLanguageForeground" Color="#ffffff" />
     <SolidColorBrush x:Key="InputLanguageBackground" Color="Transparent" />
-
-    <LinearGradientBrush x:Key="ShowDesktopButtonBorderHorizontal"
+    <ImageBrush x:Key="ShowDesktopButtonBorderHorizontal"
+                ImageSource="{StaticResource ShowDesktopImage}"
+                AlignmentY="Center">
+    </ImageBrush>
+    <ImageBrush x:Key="ShowDesktopButtonBorderVertical"
+                ImageSource="{StaticResource ShowDesktopImage}"
+                Stretch="Fill"
+                TileMode="None"
+                AlignmentX="Center"
+                AlignmentY="Center">
+        <ImageBrush.RelativeTransform>
+            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+        </ImageBrush.RelativeTransform>
+    </ImageBrush>
+    <!-- <LinearGradientBrush x:Key="ShowDesktopButtonBorderHorizontal"
                          StartPoint="0,0"
                          EndPoint="0,1">
         <GradientStop Color="#FFB3B3B3"
@@ -293,7 +306,7 @@
                       Offset="0.0" />
         <GradientStop Color="#FF000000"
                       Offset="1.0" />
-    </LinearGradientBrush>
+    </LinearGradientBrush> -->
 
     <LinearGradientBrush x:Key="ToolTipBackground"
                          StartPoint="0,0"
@@ -508,8 +521,8 @@
            BasedOn="{StaticResource TaskButton}">
         <Setter Property="Margin"
                 Value="{DynamicResource TaskButtonMargin}" />
-        <!-- NOTE: The height needs to be taskbar height + 2 to fit correctly -->
-        <Setter Property="Height" Value="42" /> 
+        <!-- NOTE: The height needs to be taskbar height + 4 to fit correctly -->
+        <Setter Property="Height" Value="44" /> 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -1517,8 +1530,7 @@
                             BorderBrush="Transparent"
                             x:Name="ButtonOuterBorder">
                         <Border BorderThickness="1,0,0,0"
-                                BorderBrush="{DynamicResource ShowDesktopButtonBorderHorizontal}"
-                                Background="#0FD4D4D4"
+                                Background="{DynamicResource ShowDesktopButtonBorderHorizontal}"
                                 x:Name="ButtonBorder">
                             <Border BorderThickness="0,1,1,1"
                                     BorderBrush="Transparent"
