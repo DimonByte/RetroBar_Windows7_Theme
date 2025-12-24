@@ -17,7 +17,10 @@ Contributions welcome.
 
 Todo list:
 
-- Show Desktop button - Make it accurate.
-- Quick Launch - I can't increase the size of the icons on the quick launch.
-- NotifyTray - See about changing the icon.
-- Taskbar Button - Make the colour more accurate when button is clicked.
+[x] Show Desktop button - Make it accurate.
+
+[] Quick Launch - I can't increase the size of the icons on the quick launch.
+
+[] NotifyTray - See about changing the icon.
+
+[] Taskbar Button - Make the colour more accurate when button is clicked.
