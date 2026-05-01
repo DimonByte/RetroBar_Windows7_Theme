@@ -1163,6 +1163,12 @@
     </Style>
 
     <Style TargetType="Image"
+           x:Key="ToolbarIcon"
+           BasedOn="{StaticResource ToolbarIcon}">
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
+    </Style>
+    <Style TargetType="Image"
            x:Key="TaskOverlayIcon"
            BasedOn="{StaticResource TaskOverlayIcon}">
         <Setter Property="Margin"
@@ -1340,7 +1346,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Transparent"
-                            Padding="0,1,0,1"
+                            Padding="0,0,0,0"
                             Name="ButtonBorder">
                         <Border BorderThickness="0,1,0,1"
                                 BorderBrush="Transparent"
@@ -1359,8 +1365,11 @@
                                             BorderBrush="Transparent"
                                             CornerRadius="2"
                                             x:Name="ButtonInnerBottomBorder">
-                                        <ContentPresenter Margin="10,10,10,10"
-                                                          x:Name="Content" />
+                                        <Border Width="40" Height="40" Background="Transparent"
+                                                CornerRadius="2"
+                                                x:Name="IconContainer">
+                                            <ContentPresenter Margin="0" x:Name="Content" />
+                                        </Border>
                                     </Border>
                                 </Border>
                             </Border>
