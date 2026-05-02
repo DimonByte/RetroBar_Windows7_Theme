@@ -923,11 +923,11 @@
         <Setter Property="Foreground"
                 Value="{DynamicResource ItemButtonForeground}" />
         <Setter Property="Margin"
-                Value="0,-8,5,-8" />
+                Value="-3,-8,5,-8" />
         <Setter Property="Width"
-                Value="53" />
+                Value="60" />
         <Setter Property="Height"
-                Value="47" />
+                Value="58" />
         <Setter Property="HorizontalAlignment"
                 Value="Left" />
         <Setter Property="VerticalAlignment"
@@ -1158,23 +1158,23 @@
            BasedOn="{StaticResource TaskIcon}">
         <Setter Property="Margin"
                 Value="0,0,3,0" />
-        <Setter Property="Width" Value="24" />
-        <Setter Property="Height" Value="24" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="30" />
     </Style>
 
     <Style TargetType="Image"
            x:Key="ToolbarIcon"
            BasedOn="{StaticResource ToolbarIcon}">
-        <Setter Property="Width" Value="24" />
-        <Setter Property="Height" Value="24" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="30" />
     </Style>
     <Style TargetType="Image"
            x:Key="TaskOverlayIcon"
            BasedOn="{StaticResource TaskOverlayIcon}">
         <Setter Property="Margin"
                 Value="0,0,3,-1" />
-        <Setter Property="Width" Value="24" />
-        <Setter Property="Height" Value="24" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="30" />
     </Style>
 
     <Style TargetType="TextBlock"
