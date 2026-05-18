@@ -10,6 +10,18 @@
     <Thickness x:Key="TaskButtonMargin" Right="2" />
     <FontWeight x:Key="SetTimeMenuItemWeight">Normal</FontWeight>
     <BitmapImage x:Key="TaskbarImage" UriSource="../Resources/win7taskbardark.png" />
+
+    <BitmapImage x:Key="NotificationUnclicked" UriSource="../Resources/notificationbuttonclicked.png" />
+    <BitmapImage x:Key="NotificationClicked" UriSource="../Resources/notificationclicked.png" />
+
+    <ImageBrush x:Key="NotificationUnclickedBrush"
+                ImageSource="{StaticResource NotificationUnclicked}">
+    </ImageBrush>
+
+    <ImageBrush x:Key="NotificationClickedBrush"
+                ImageSource="{StaticResource NotificationClicked}">
+    </ImageBrush>
+
     <BitmapImage x:Key="ShowDesktopImage" UriSource="../Resources/win7showdesktop.png" />
     <BitmapImage x:Key="TrayToggleIcon" UriSource="../Resources/win7traytoggleicon.png" />
     <ImageBrush x:Key="TaskbarBackground"
@@ -634,7 +646,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Transparent"
-                            Padding="0,1,0,1"
+                            Padding="0,0,0,0"
                             Name="ButtonBorder">
                         <Border BorderThickness="1"
                                 BorderBrush="{DynamicResource TaskButtonOuterBorder}"
@@ -652,7 +664,7 @@
                                             BorderBrush="{DynamicResource TaskButtonInnerBottomLeftBorder}"
                                             CornerRadius="3"
                                             x:Name="ButtonInnerBottomLeftBorder">
-                                        <ContentPresenter Margin="7,4,5,2"
+                                        <ContentPresenter Margin="6,0"
                                                           x:Name="Content" />
                                     </Border>
                                 </Border>
@@ -1432,7 +1444,7 @@
                                     Value="Transparent" />
                             <Setter TargetName="Content"
                                     Property="Margin"
-                                    Value="10,10,10,10" />
+                                    Value="7,4,5,2" />
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
