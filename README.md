@@ -31,11 +31,22 @@ This project is based on the Windows Vista Aero theme XAML file from the
 RetroBar project, which is licensed under the Apache License 2.0.
 Modifications have been made to make it a Windows 7 like theme.
 
+## Customization
+
+To edit the taskbar colour, edit the following line on the XAML file that is near the top:
+
+    <!-- EDIT BELOW TO CHANGE COLOUR OF TASKBAR -->
+    <!-- THEN CHANGE OPACITY ON TaskbarBackground and TaskbarVerticalBackground to change strength -->
+    <!-- For no colour at all, set the colour to transparant and set opacity to 1 -->
+    <SolidColorBrush x:Key="TaskbarTintColor" Color="#3c7eb1" /> 
+
+The colour is in HEX value and supports transparency.
+
 ## Status
 
 Windows 7 Taskbar Shown Label - Completed ✅ Only minor adjustments remain.
 
-Windows 7 Taskbar Hidden Label - Help needed [❌]. I am unable to get the padding/position right for the hidden label version; the buttons are floating in the middle of the taskbar and I can't get them to anchor to the left.
+Windows 7 Taskbar Hidden Label - Completed ✅ Only minor adjustments remain.
 
 ## Contributions
 Contributions and improvements welcome!
@@ -50,4 +61,4 @@ Contributions and improvements welcome!
 
 ✅ Taskbar Button - Make the colour more accurate when button is clicked.
 
-❌ Taskbar Button [Hidden Label Version] - Make the padding and positioning correct.
+✅ Taskbar Button [Hidden Label Version] - Make the padding and positioning correct.

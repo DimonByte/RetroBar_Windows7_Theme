@@ -7,8 +7,13 @@
     <system:Double x:Key="TaskbarWidth">80</system:Double>
     <system:Boolean x:Key="AllowsTransparency">True</system:Boolean>
     <system:Boolean x:Key="UseFloatingStartButton">True</system:Boolean>
+    <!-- EDIT BELOW TO CHANGE COLOUR OF TASKBAR -->
+    <!-- THEN CHANGE OPACITY ON TaskbarBackground and TaskbarVerticalBackground to change strength -->
+    <!-- For no colour at all, set the colour to transparant and set opacity to 1 -->
+    <SolidColorBrush x:Key="TaskbarTintColor" Color="#3c7eb1" /> 
     <Thickness x:Key="TaskButtonMargin" Right="2" />
     <FontWeight x:Key="SetTimeMenuItemWeight">Normal</FontWeight>
+
     <BitmapImage x:Key="TaskbarImage" UriSource="../Resources/win7taskbardark.png" />
 
     <BitmapImage x:Key="NotificationUnclicked" UriSource="../Resources/notificationbuttonclicked.png" />
@@ -24,18 +29,22 @@
 
     <BitmapImage x:Key="ShowDesktopImage" UriSource="../Resources/win7showdesktop.png" />
     <BitmapImage x:Key="TrayToggleIcon" UriSource="../Resources/win7traytoggleicon.png" />
+
+
     <ImageBrush x:Key="TaskbarBackground"
-                ImageSource="{StaticResource TaskbarImage}"
-                Stretch="Fill"
-                TileMode="None"
-                AlignmentX="Center"
-                AlignmentY="Center" />
+            ImageSource="{StaticResource TaskbarImage}"
+            Stretch="Fill"
+            TileMode="None"
+            AlignmentX="Center"
+            AlignmentY="Center"
+            Opacity="0.75" />
     <ImageBrush x:Key="TaskbarVerticalBackground"
                 ImageSource="{StaticResource TaskbarImage}"
                 Stretch="Fill"
                 TileMode="None"
                 AlignmentX="Center"
-                AlignmentY="Center">
+                AlignmentY="Center"
+                Opacity="0.75">
         <ImageBrush.RelativeTransform>
             <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
         </ImageBrush.RelativeTransform>
@@ -53,7 +62,7 @@
     <SolidColorBrush x:Key="TaskbarVerticalBottomBorder" Color="Transparent" />
 
     <SolidColorBrush x:Key="TrayToggleOuterBorder" Color="#20ffffff" />
-    <SolidColorBrush x:Key="TrayToggleBorder" Color="#990000" />
+    <SolidColorBrush x:Key="TrayToggleBorder" Color="#3c7fb1" />
     <LinearGradientBrush x:Key="TrayToggleHoverBackground"
                          StartPoint="0,0"
                          EndPoint="0,1">
@@ -442,6 +451,7 @@
                             x:Name="TaskbarTopBorder">
                         <Border BorderThickness="0,0,0,0"
                                 BorderBrush="{DynamicResource TaskbarTopInnerBorder}"
+                                Background="{DynamicResource TaskbarTintColor}"
                                 x:Name="TaskbarTopInnerBorder">
                             <Border BorderThickness="0,0,0,0"
                                     BorderBrush="{DynamicResource TaskbarBottomBorder}"
@@ -536,7 +546,7 @@
                 Value="{DynamicResource TaskButtonMargin}" />
         <!-- NOTE: The height needs to be taskbar height + 4 to fit correctly -->
         <Setter Property="Height" Value="44" /> 
-        <Setter Property="Template">
+                <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Transparent"
@@ -1357,7 +1367,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Transparent"
-                            Padding="0,0,12,0"
+                            Padding="0,0,0,0"
                             Name="ButtonBorder">
                         <Border BorderThickness="0,1,0,1"
                                 BorderBrush="Transparent"
@@ -1444,7 +1454,7 @@
                                     Value="Transparent" />
                             <Setter TargetName="Content"
                                     Property="Margin"
-                                    Value="7,4,5,2" />
+                                    Value="8,8,8,8" />
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
