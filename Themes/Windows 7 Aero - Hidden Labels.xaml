@@ -1,6 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- RetroBar - Windows 7 Theme by DimonByte 2026 under Apache-2.0 License -->
+    <!-- VERSION: 1.1 -->
+    <!-- Notice of Modification
+    This project is based on the Windows Vista Aero theme XAML file from the RetroBar project, which is licensed under the Apache License 2.0. Modifications have been made to make it a Windows 7 like theme. -->
     <system:Double x:Key="TaskButtonWidth">44</system:Double>
     <system:Double x:Key="TaskButtonMinWidth">44</system:Double>
     <system:Double x:Key="TaskbarRowHeight">30</system:Double>
