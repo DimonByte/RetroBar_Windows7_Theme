@@ -1,10 +1,12 @@
 # RetroBar - Windows 7 Theme
 
-### A Windows 7 Taskbar Theme for RetroBar. (for those people that are nostalgic about Windows 7)
+### A customizable Windows 7 Taskbar Theme for RetroBar. (for those people that are nostalgic about Windows 7)
 
-![alt text](image-2.png)
-
+Taskbar with custom colour applied:
+![Taskbar with custom colour applied](image-2.png)
+Taskbar:
 ![alt text](image-1.png)
+Taskbar with open apps:
 ![alt text](image.png)
 
 ## About
@@ -33,6 +35,16 @@ Modifications have been made to make it a Windows 7 like theme.
 
 ## Customization
 
+You can edit the following to your liking:
+
+- This changes the colour of the taskbar:
+`
+<SolidColorBrush x:Key="TaskbarTintColor" Color="#3c7eb1" />
+`
+
+- Opacity="0.75" in the TaskbarBackground and TaskbarVerticalBackground, this makes the custom colour you set to be less/more prominent.
+
+### How to edit:
 To edit the taskbar colour, edit the following line on the XAML file that is near the top:
 
     <!-- EDIT BELOW TO CHANGE COLOUR OF TASKBAR -->
@@ -40,7 +52,9 @@ To edit the taskbar colour, edit the following line on the XAML file that is nea
     <!-- For no colour at all, set the colour to transparant and set opacity to 1 -->
     <SolidColorBrush x:Key="TaskbarTintColor" Color="#3c7eb1" /> 
 
-The colour is in HEX value and supports transparency.
+The colour is in HEX value and supports transparency. 
+
+NOTE: Once you have made the colour change, you must reload the theme by going to Retrobar > Theme:, select any other theme and then select back to the Windows 7 theme to load your changes.
 
 ## Status
 
