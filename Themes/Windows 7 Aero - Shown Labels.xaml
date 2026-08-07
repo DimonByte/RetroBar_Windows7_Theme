@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <!-- RetroBar - Windows 7 Theme by DimonByte 2026 under Apache-2.0 License -->
-    <!-- VERSION: 1.1 -->
+    <!-- VERSION: 1.2 -->
     <!-- Notice of Modification
     This project is based on the Windows Vista Aero theme XAML file from the RetroBar project, which is licensed under the Apache License 2.0. Modifications have been made to make it a Windows 7 like theme. -->
     <system:Double x:Key="TaskbarHeight">40</system:Double>
@@ -13,7 +13,7 @@
     <!-- EDIT BELOW TO CHANGE COLOUR OF TASKBAR -->
     <!-- THEN CHANGE OPACITY ON TaskbarBackground and TaskbarVerticalBackground to change strength -->
     <!-- For no colour at all, set the colour to transparant and set opacity to 1 -->
-    <SolidColorBrush x:Key="TaskbarTintColor" Color="#3c7eb1" /> 
+    <SolidColorBrush x:Key="TaskbarTintColor" Color="#4ea6e9" /> 
     <Thickness x:Key="TaskButtonMargin" Right="2" />
     <FontWeight x:Key="SetTimeMenuItemWeight">Normal</FontWeight>
 
@@ -40,14 +40,14 @@
             TileMode="None"
             AlignmentX="Center"
             AlignmentY="Center"
-            Opacity="0.75" />
+            Opacity="1" />
     <ImageBrush x:Key="TaskbarVerticalBackground"
                 ImageSource="{StaticResource TaskbarImage}"
                 Stretch="Fill"
                 TileMode="None"
                 AlignmentX="Center"
                 AlignmentY="Center"
-                Opacity="0.75">
+                Opacity="1">
         <ImageBrush.RelativeTransform>
             <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
         </ImageBrush.RelativeTransform>
@@ -947,7 +947,7 @@
         <Setter Property="Foreground"
                 Value="{DynamicResource ItemButtonForeground}" />
         <Setter Property="Margin"
-                Value="-3,-8,5,-8" />
+                Value="-3,-8,11,-8" />
         <Setter Property="Width"
                 Value="60" />
         <Setter Property="Height"
@@ -1182,15 +1182,17 @@
            BasedOn="{StaticResource TaskIcon}">
         <Setter Property="Margin"
                 Value="0,0,3,0" />
-        <Setter Property="Width" Value="28" />
-        <Setter Property="Height" Value="28" />
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="Fant" />
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
     </Style>
 
     <Style TargetType="Image"
            x:Key="ToolbarIcon"
            BasedOn="{StaticResource ToolbarIcon}">
-        <Setter Property="Width" Value="24" />
-        <Setter Property="Height" Value="24" />
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="Fant" />
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
     </Style>
     <Style TargetType="Image"
            x:Key="TaskOverlayIcon"
@@ -1366,11 +1368,13 @@
            BasedOn="{StaticResource ToolbarButton}">
         <Setter Property="Background"
                 Value="Transparent" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Transparent"
-                            Padding="0,0,0,0"
+                            Padding="0,0,20,0"
                             Name="ButtonBorder">
                         <Border BorderThickness="0,1,0,1"
                                 BorderBrush="Transparent"
@@ -1391,6 +1395,7 @@
                                             x:Name="ButtonInnerBottomBorder">
                                         <Border Width="40" Height="40" Background="Transparent"
                                                 CornerRadius="2"
+                                                RenderOptions.BitmapScalingMode="NearestNeighbor"
                                                 x:Name="IconContainer">
                                             <ContentPresenter Margin="0" x:Name="Content" />
                                         </Border>
@@ -1457,7 +1462,7 @@
                                     Value="Transparent" />
                             <Setter TargetName="Content"
                                     Property="Margin"
-                                    Value="8,8,8,8" />
+                                    Value="5" />
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>

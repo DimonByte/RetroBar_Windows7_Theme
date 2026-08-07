@@ -2,12 +2,14 @@
 
 ### A customizable Windows 7 Taskbar Theme for RetroBar. (for those people that are nostalgic about Windows 7)
 
-Taskbar with custom colour applied:
-![Taskbar with custom colour applied](image-2.png)
-Taskbar:
-![alt text](image-1.png)
+Overview:
+![Overview](Screenshots/image-2.png)
+Normal Taskbar:
+![alt text](Screenshots/image-1.png)
 Taskbar with open apps:
-![alt text](image.png)
+![alt text](Screenshots/image.png)
+Taskbar with custom colour applied:
+![Taskbar with custom colour applied](Screenshots/image-3.png)
 
 ## About
 
