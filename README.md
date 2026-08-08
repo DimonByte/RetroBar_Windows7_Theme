@@ -40,9 +40,9 @@ Modifications have been made to make it a Windows 7 like theme.
 You can edit the following to your liking:
 
 - This changes the colour of the taskbar:
-`
-<SolidColorBrush x:Key="TaskbarTintColor" Color="#3c7eb1" />
-`
+
+`<SolidColorBrush x:Key="TaskbarTintColor" Color="#3c7eb1" />`
+
 
 - Opacity="0.75" in the TaskbarBackground and TaskbarVerticalBackground, this makes the custom colour you set to be less/more prominent.
 
