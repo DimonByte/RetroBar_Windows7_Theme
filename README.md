@@ -2,6 +2,8 @@
 
 ### A customizable Windows 7 Taskbar Theme for RetroBar. (for those people that are nostalgic about Windows 7)
 
+Small taskbar (on Windows 11 With Open-Shell):
+![alt text](Screenshots/image-4.png)
 Overview:
 ![Overview](Screenshots/image-2.png)
 Normal Taskbar:
