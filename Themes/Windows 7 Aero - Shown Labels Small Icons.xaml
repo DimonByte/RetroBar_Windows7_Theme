@@ -40,14 +40,14 @@
             TileMode="None"
             AlignmentX="Center"
             AlignmentY="Center"
-            Opacity="1" />
+            Opacity="0.75" />
     <ImageBrush x:Key="TaskbarVerticalBackground"
                 ImageSource="{StaticResource TaskbarImage}"
                 Stretch="Fill"
                 TileMode="None"
                 AlignmentX="Center"
                 AlignmentY="Center"
-                Opacity="1">
+                Opacity="0.75">
         <ImageBrush.RelativeTransform>
             <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
         </ImageBrush.RelativeTransform>
